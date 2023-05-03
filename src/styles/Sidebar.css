@@ -1,0 +1,22 @@
+#sidebar1 {
+    width: 20%;
+    height: 100vh;
+    background: radial-gradient(circle, #0b5742 0%, #0b5742 35%, #0b5742 100%);
+}
+.imagenSid {
+        display: block;
+        margin: auto;
+  }
+
+  .nav-link{
+    color:white !important;
+  }
+
+  #tap{
+    background: '#202326';
+     color: "white",
+  }
+
+  body{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+  }

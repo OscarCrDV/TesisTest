@@ -1,0 +1,19 @@
+
+.mapa{
+    border: 1px solid rgb(184, 184, 184);
+    height: 30vw;
+    width: 60vw;
+    background: rgb(140, 140, 140);
+    box-shadow: inset 0 0 0 4px #afaeae;
+    transition-duration: 0.9s;
+    border-radius: 10px;
+}
+
+.mapa:hover{
+    box-shadow: inset 0 0 0 4px black;
+  }
+
+.map-container{
+    width: 100%;
+    height: 90vh;
+}
