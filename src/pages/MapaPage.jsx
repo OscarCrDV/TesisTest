@@ -1,27 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Mapa.css'
-import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api"
+import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api"
+import ModalMapa from '../ui/components/modals/modalMapa';
 
 
-const Map = () => {
-  
-    return (
-      <GoogleMap zoom={8} center={{ lat: 44, lng: -80 }} mapContainerClassName="map-container">
-        <Marker position={{ lat: 44, lng: -80 }} />
-      </GoogleMap >
-    )
-  }
+const onMarkerClick = (event, id) => {
+  console.log(id);
+}
 
+// este es el principal
 const MapaPage = () => {
 
+  const [modalInfo, setModalInfo] = useState(false);
+
   const { isLoaded } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyAqwNXXDPXZDv7qHjKJYKtdvAX8hlvPw_Q',
+    googleMapsApiKey: import.meta.env.VITE_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
   if (!isLoaded) return <div>Loading...</div>
-  return <Map />
+  return (
 
+    <ModalMapa/>
+  ) 
+  // ---------------------------------------------
+
+  function Map() {
+    return (
+      <GoogleMap mapContainerClassName="map-container" zoom={17} center={{ lat: -8.111678, lng: -79.028774 }}>
+        <MarkerF position={{ lat: -8.111678, lng: -79.028400 }} onClick={(event) => onMarkerClick(event, 1)} />
+        <MarkerF position={{ lat: -8.111678, lng: -79.028500 }} onClick={(event) => onMarkerClick(event, 1)} />
+        <MarkerF position={{ lat: -8.111678, lng: -79.028700 }} onClick={(event) => onMarkerClick(event, 1)} />
+      </GoogleMap>
+    )
+  }
 }
+
 
 export default MapaPage
 
