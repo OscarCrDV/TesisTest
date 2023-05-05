@@ -17,11 +17,13 @@ const MapaPage = () => {
     googleMapsApiKey: import.meta.env.VITE_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY,
   });
 
-  if (!isLoaded) return <div>Loading...</div>
+   if (!isLoaded) return <div>Loading...</div> 
   return (
-
-    <ModalMapa/>
-  ) 
+    <>
+      <ModalMapa />
+      <Map />
+    </>
+  )
   // ---------------------------------------------
 
   function Map() {
