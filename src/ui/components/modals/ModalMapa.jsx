@@ -1,104 +1,119 @@
+import { useState,useEffect } from 'react'
 import '../../../styles/ModalMapa.css'
 import styled from 'styled-components'
 
-function ModalMapa() {
+function ModalMapa({ showModalMap, SetShowModalMap }) {
+
+    const [modalStateCh, setModalStateChil] = useState(showModalMap);
+
+    const changeStateModalButton = () => {
+        if(showModalMap == true){
+            SetShowModalMap(false)
+            setModalStateChil(false)
+        }else{
+            SetShowModalMap(true)
+            setModalStateChil(true)
+        }
+    }
 
     return (
         <>
-            <Overlay>
-                <ContenedorModal>
-                    <EncabezadoModal>
-                        <h3>Registro de Ocurrencias</h3>
-                    </EncabezadoModal>
-                    <BotonCerrar><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16">
-                        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
-                    </svg></BotonCerrar>
-                    <OcurrenciaAll>
-                        <Ocurrencia>
-                            <div className="card border-success mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-success p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+            {showModalMap &&
+                <Overlay>
+                    <ContenedorModal>
+                        <EncabezadoModal>
+                            <h3>Registro de Ocurrencias</h3>
+                        </EncabezadoModal>
+                        <BotonCerrar><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x" viewBox="0 0 16 16" onClick={changeStateModalButton}>
+                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                        </svg></BotonCerrar>
+                        <OcurrenciaAll>
+                            <Ocurrencia>
+                                <div className="card border-success mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-success p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                        <Ocurrencia>
-                            <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-danger p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                            </Ocurrencia>
+                            <Ocurrencia>
+                                <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-danger p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                        <Ocurrencia>
-                            <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-danger p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                            </Ocurrencia>
+                            <Ocurrencia>
+                                <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-danger p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                        <Ocurrencia>
-                            <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-danger p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                            </Ocurrencia>
+                            <Ocurrencia>
+                                <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-danger p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                        <Ocurrencia>
-                            <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-danger p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                            </Ocurrencia>
+                            <Ocurrencia>
+                                <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-danger p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                        <Ocurrencia>
-                            <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-danger p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                            </Ocurrencia>
+                            <Ocurrencia>
+                                <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-danger p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                        <Ocurrencia>
-                            <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-danger p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                            </Ocurrencia>
+                            <Ocurrencia>
+                                <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-danger p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                        <Ocurrencia>
-                            <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
-                                <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
-                                <div className="card-body text-danger p-2">
-                                    <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
-                                    <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
-                                    <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                            </Ocurrencia>
+                            <Ocurrencia>
+                                <div className="card border-danger mb-3" style={{ maxWidth: "18rem;" }}>
+                                    <div className="card-header"><b>Autor/Autores:</b> Ubaldo Valle Florian</div>
+                                    <div className="card-body text-danger p-2">
+                                        <p className="card-text m-0"><b>Tipo de Ocurrencia:</b> Daño Propiedad Privada</p>
+                                        <p className="card-text m-0"><b>Detalle de Delito:</b> Robo de Casa</p>
+                                        <p className="card-text m-0"><b>Fecha:</b> 04/12/2023</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </Ocurrencia>
-                    </OcurrenciaAll>
+                            </Ocurrencia>
+                        </OcurrenciaAll>
 
 
-                </ContenedorModal>
-            </Overlay>
+                    </ContenedorModal>
+                </Overlay>
+            }
         </>
     )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 export default function NuevoReportePage() {
     return (
         <>
-            <div style={{ height: "90vh", overflow: "scroll ", background: "#F9E79F" }}>
+            <div style={{ height: "90vh", overflow: "scroll ", background: "white" }}>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-4'></div>
@@ -18,21 +18,21 @@ export default function NuevoReportePage() {
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label">Dirección:</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                                <div id="emailHelp" className="form-text">Ingresar la dirección.</div>
                             </div>
                         </div>
                         <div className='col-4'>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label">Calle:</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                                <div id="emailHelp" className="form-text">Ingresar la calle.</div>
                             </div>
                         </div>
                         <div className='col-4'>
                             <div className="mb-3">
                                 <label htmlFor="exampleInputEmail1" className="form-label">Ciudad:</label>
                                 <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                                <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                                <div id="emailHelp" className="form-text">Ingresar la ciudad.</div>
                             </div>
                         </div>
 
