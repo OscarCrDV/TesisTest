@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function PerfilUsuario() {
+export function PerfilUsuario() {
   return (
     <>
       

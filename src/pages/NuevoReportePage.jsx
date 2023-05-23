@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NuevoReportePage() {
+export function NuevoReportePage() {
     return (
         <>
             <div style={{ height: "90vh", overflow: "scroll ", background: "white" }}>

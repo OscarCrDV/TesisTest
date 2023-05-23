@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/Soporte.css'
 
-export default function Soporte() {
+export function Soporte() {
     return (
         <>
             <div style={{ height: "90vh", overflow: "scroll ", background: "white" }}>

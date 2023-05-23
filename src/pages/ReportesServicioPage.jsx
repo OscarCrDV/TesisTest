@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ReportesServicioPage() {
+export function ReportesServicioPage() {
     return (
         <div style={{ height: "90vh", overflow: "scroll ", background: "white" }}>
             <div className='container'>
