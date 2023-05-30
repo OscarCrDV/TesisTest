@@ -14,11 +14,29 @@ const actosDelictivos = {
             "detalles_adicionales": "El sospechoso portaba una pistola y huyó en un automóvil negro.",
             "actores_delito": [
                 {
-                    "nombre": "Juan Pérez",
+                    "nombre": "Juana Sanchez Carrión",
+                    "dni": "999999999",
                     "edad": 28,
                     "genero": "Masculino",
-                    "descripcion": "El sospechoso era de complexión delgada, pelo negro y vestía una chaqueta azul."
+                    "descripcion": "El sospechoso era de complexión delgada, pelo negro y vestía una chaqueta azul.",
+                    "url_img": "https://i.pinimg.com/originals/97/6c/96/976c966ae2722d2e51507ea7a7740f91.jpg"
+                },
+                {
+                    "nombre": "Maria del Pilar Velasquez",
+                    "dni": "888888888",
+                    "edad": 28,
+                    "genero": "Masculino",
+                    "descripcion": "El sospechoso era de complexión delgada, pelo negro y vestía una chaqueta azul.",
+                    "url_img": "https://www.eventosfilm.com/wp-content/uploads/2018/01/foto-carnet-se%C3%B1orita.gif"
                 }
+            ],
+            "efectivos_policiales": [
+                {
+                    "nombre": "Juana Sanchez Carrión",
+                    "dni": "999999999",
+                    "genero": "Masculino",
+                    "url_img": "https://i.pinimg.com/originals/97/6c/96/976c966ae2722d2e51507ea7a7740f91.jpg"
+                },
             ]
         },
         {
@@ -38,7 +56,8 @@ const actosDelictivos = {
                     "nombre": "María López",
                     "edad": 22,
                     "genero": "Femenino",
-                    "descripcion": "La asaltante era de estatura media, pelo rubio y llevaba gafas de sol."
+                    "descripcion": "La asaltante era de estatura media, pelo rubio y llevaba gafas de sol.",
+                    "url_img": "Aqui va la ruta local o remota"
                 }
             ]
         },
@@ -59,7 +78,8 @@ const actosDelictivos = {
                     "nombre": "Desconocido",
                     "edad": null,
                     "genero": "Desconocido",
-                    "descripcion": "El autor del fraude utilizó una identidad falsa en línea y ocultó su ubicación real."
+                    "descripcion": "El autor del fraude utilizó una identidad falsa en línea y ocultó su ubicación real.",
+                    "url_img": "Aqui va la ruta local o remota"
                 }
             ]
         }

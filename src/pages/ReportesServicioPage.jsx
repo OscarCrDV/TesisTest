@@ -2,7 +2,7 @@ import React from 'react'
 
 export function ReportesServicioPage() {
     return (
-        <div style={{ height: "90vh", overflow: "scroll ", background: "white" }}>
+        <div>
             <div className='container'>
                 <div className='row'>
                     <div className='col-3'></div>

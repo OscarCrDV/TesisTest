@@ -79,8 +79,8 @@ const Sidebar = () => {
                         </div>
                     </div>
                 </div>
-                <div className="content w-100">
-                    <nav className="navbar navbar-expand-lg navbar-light" style={{ background: "#201f1d", color: "white", height: "10vh" }}>
+                <div className="content w-100 bg-light text-dark" style={{ height: "100vh", width: "100vw", overflow: "scroll "}}>
+                    <nav className="navbar navbar-expand-lg navbar-light " style={{ background: "#201f1d", color: "white", height: "10vh" }}>
                         <div className="container-fluid">
                             <button
                                 className="navbar-toggler"

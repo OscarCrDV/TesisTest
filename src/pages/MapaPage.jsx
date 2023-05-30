@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import '../styles/Mapa.css'
-import { GoogleMap, useLoadScript, MarkerF } from "@react-google-maps/api"
+import { GoogleMap, useLoadScript, MarkerF, Circle } from "@react-google-maps/api"
 import ModalMapa from '../ui/components/modals/modalMapa';
 import { getDelitos } from '../assets/Delitos'
+import { CirculoMarker } from '../ui/components/modals/CirculoMarker';
 
 
 
@@ -76,31 +77,47 @@ export const MapaPage = () => {
     <>
       <ModalMapa showModalMap={showModalMap} SetShowModalMap={setShowModalMap} delitosJson={dataDelitos} idSelectDelito={idSelectDelito} FilterDelitosSelect={FilterDelitosSelect} />
       <Map showModalMap2={showModalMap} SetShowModalMap2={setShowModalMap} delitosJson={dataDelitos} SetIdSelectDelito={setIdSelectDelito} />
+
     </>
   )
   // ---------------------------------------------
 
   function Map({ showModalMap2, SetShowModalMap2, delitosJson, SetIdSelectDelito }) {
 
-    const changeStateModalMarker = (event, idMarker) => {
+    const initialCoordinates = { lat: -8.110895983145374, lng: -79.02869760990144 };
+    const [coordinates, setCoordinates] = useState(initialCoordinates);
+
+    // Función para actualizar las coordenadas
+    const updateCoordinates = () => {
+      const newCoordinates = { lat: 10.123, lng: -50.789 };
+      setCoordinates(newCoordinates);
+    };
+
+
+    const changeStateModalMarker = (event, idMarker, position) => {
       if (showModalMap2 == true) {
         SetShowModalMap2(false)
       } else {
         SetShowModalMap2(true)
       }
       SetIdSelectDelito(idMarker);
+
+      updateCoordinates();
+
+      console.log(idMarker);
     }
 
+
+
+    
     // Convertir objeto en un array de pares clave-valor
     const dataArray = Object.entries(delitosJson);
-
     return (
       <GoogleMap mapContainerClassName="map-container" zoom={17} center={{ lat: -8.111678, lng: -79.028774 }}>
 
         {Array.isArray(dataArray[0][1]) && dataArray[0][1].map((delito) => (
-          <MarkerF key={delito.id} position={{ lat: delito.coordenadas.latitud, lng: delito.coordenadas.longitud }} onClick={(event) => changeStateModalMarker(event, delito.id)} />
+          <MarkerF key={delito.id} position={{ lat: delito.coordenadas.latitud, lng: delito.coordenadas.longitud }} onClick={(event) => changeStateModalMarker(event, delito.id, { lat: delito.coordenadas.latitud, lng: delito.coordenadas.longitud })} />
         ))}
-
       </GoogleMap>
     )
   }

@@ -4,7 +4,7 @@ import '../styles/Soporte.css'
 export function Soporte() {
     return (
         <>
-            <div style={{ height: "90vh", overflow: "scroll ", background: "white" }}>
+            <div>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-4'></div>

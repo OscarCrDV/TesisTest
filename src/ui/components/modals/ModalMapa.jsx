@@ -4,9 +4,29 @@ import styled from 'styled-components'
 
 import { Ocurrencia } from './Ocurrencia'
 
+
+function obtenerElementoPorId(array, id) {
+    return array.find(elemento => elemento.id === id);
+  }
+
+function eliminarElementoPorId(array, id) {
+    if(array){
+        return array.filter(elemento => elemento.id !== id);
+    }else{
+        return [];
+    }
+
+  }
+
+  function agregarElementoAlPrincipio(array, nuevoElemento) {
+    array.unshift(nuevoElemento);
+    return array;
+  }
+
 function ModalMapa({ showModalMap, SetShowModalMap, delitosJson, idSelectDelito, FilterDelitosSelect }) {
 
     var delitos = []; // aqui se almacenan todos los delitos filtrados 
+    var delFiltOrde = [];
 
     if (delitosJson != null && idSelectDelito != null) {
         const dataArrayF = Object.entries(delitosJson);
@@ -16,11 +36,14 @@ function ModalMapa({ showModalMap, SetShowModalMap, delitosJson, idSelectDelito,
 
 // SE TIENE QUE ORDENAR TODOS LOS DELITOS PONIENDO EN PRIMER LUGAR EL SELECCIONADO
 
+            // Esto trae la primera filtracion de los delitos que se mostraran en el modal
             delitos = delitosFiltrados;
-
+            //Todo esto lo que hace es ordenar los elementos filtrados poniendo en primer lugar el seleccionado - Segunda filtración
+            const objetoSelect = obtenerElementoPorId(delitos, idSelectDelito);
+            const delitos2 = eliminarElementoPorId(delitos, idSelectDelito)
+            delFiltOrde = agregarElementoAlPrincipio(delitos2,objetoSelect);
         }
     }
-
 
 
     // Convertir objeto en un array de pares clave-valor // esto sirve para cerrar el modal
@@ -38,8 +61,6 @@ function ModalMapa({ showModalMap, SetShowModalMap, delitosJson, idSelectDelito,
             SetShowModalMap(true)
             setModalStateChil(true)
         }
-
-
     }
 
     return (
@@ -54,8 +75,8 @@ function ModalMapa({ showModalMap, SetShowModalMap, delitosJson, idSelectDelito,
                             <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
                         </svg></BotonCerrar>
                         <OcurrenciaAll>
-                            {Array.isArray(delitos) && delitos.map((delito) => (
-                                <Ocurrencia tipoDelito = {delito.tipo_delito} id= {delito.id} detalleDelito = {delito.detalles_adicionales} fecha = {delito.fecha} hora = {delito.hora}/>
+                            {Array.isArray(delFiltOrde) && delFiltOrde.map((delito, indice) => (
+                                <Ocurrencia key={delito.id} tipoDelito = {delito.tipo_delito} id= {delito.id} detalleDelito = {delito.detalles_adicionales} fecha = {delito.fecha} hora = {delito.hora} indice = {indice}/>
                             ))}
 
                         </OcurrenciaAll>
