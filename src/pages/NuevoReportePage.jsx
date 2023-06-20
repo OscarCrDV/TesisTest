@@ -3,11 +3,11 @@ import React from 'react'
 export function NuevoReportePage() {
     return (
         <>
-            <div style={{ height: "90vh", overflow: "scroll ", background: "white" }}>
+            <div style={{ height: "90vh", overflow: "scroll ", background: "white", borderRadius: "10px" }}>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-4'></div>
-                        <h3 className='col-4 text-center m-5' style={{  fontSize: "32px" }}>Nuevo Reporte</h3>
+                        <h3 className='col-4 text-center m-5' style={{  fontSize: "28px" }}>Nuevo Reporte</h3>
                         <div className='col-4'></div>
                         <div className="form-group mb-4">
                             <label className="control-label" htmlFor="date" disabled>Date:</label>

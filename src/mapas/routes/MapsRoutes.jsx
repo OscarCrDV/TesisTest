@@ -8,6 +8,9 @@ export function MapsRoutes() {
   return (
     <>
       <Routes>
+
+        <Route path="/" element={<MapaPage/>} /> 
+
         <Route path="/mapa" element={<MapaPage />} />
         <Route path="/reportes-de-servicio" element={<ReportesServicioPage />} />
         <Route path='/nuevo-reporte' element={<NuevoReportePage />} />

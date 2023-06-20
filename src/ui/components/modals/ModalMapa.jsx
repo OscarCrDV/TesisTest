@@ -66,7 +66,7 @@ function ModalMapa({ showModalMap, SetShowModalMap, delitosJson, idSelectDelito,
     return (
         <>
             {showModalMap &&
-                <Overlay>
+                <Overlay className='animate__animated animate__fadeInRight'>
                     <ContenedorModal>
                         <EncabezadoModal>
                             <h3>Registro de Ocurrencias</h3>
@@ -90,7 +90,7 @@ function ModalMapa({ showModalMap, SetShowModalMap, delitosJson, idSelectDelito,
 export default ModalMapa
 
 const Overlay = styled.div`
- height: 90vh;
+ height: 87vh;
  position: fixed;
  background: rgba(0,0,0,.5);
  padding: 30px;
@@ -150,7 +150,7 @@ const BotonCerrar = styled.div`
 `;
 
 const OcurrenciaAll = styled.div`
-height: 72vh;
+height: 90%;
 overflow: auto; 
 overflow-y: scroll;
 }

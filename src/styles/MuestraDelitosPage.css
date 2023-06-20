@@ -2,11 +2,9 @@
   width: 400px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
   
-  
-  
-  
-  
-  
+.transparent-box {
+  background-color: rgba(0, 0, 0, 0.5); /* Ajusta el valor de '0.5' para cambiar la transparencia */
+  padding: 20px;
+}

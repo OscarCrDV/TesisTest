@@ -4,11 +4,11 @@ import '../styles/Soporte.css'
 export function Soporte() {
     return (
         <>
-            <div>
+            <div style={{background:"white", borderRadius: "10px"}}>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-4'></div>
-                        <h3 className='col-4 text-center m-5' style={{ fontSize: "32px" }}>Nuevo Ticket</h3>
+                        <h3 className='col-4 text-center m-5' style={{ fontSize: "28px" }}>Nuevo Ticket</h3>
                         <div className='col-4'></div>
 
                         <div className='col-12'>

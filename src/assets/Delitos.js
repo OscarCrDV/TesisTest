@@ -28,7 +28,7 @@ const actosDelictivos = {
                     "genero": "Masculino",
                     "descripcion": "El sospechoso era de complexión delgada, pelo negro y vestía una chaqueta azul.",
                     "url_img": "https://www.eventosfilm.com/wp-content/uploads/2018/01/foto-carnet-se%C3%B1orita.gif"
-                }
+                },
             ],
             "efectivos_policiales": [
                 {
@@ -67,6 +67,50 @@ const actosDelictivos = {
             "coordenadas": {
                 "latitud": -8.111373950984236,
                 "longitud": -79.02822017669679
+            },
+            "tipo_delito": "Fraude cibernético",
+            "descripcion": "Se detectó un caso de fraude cibernético en la Calle del Sol 789. Una persona recibió un correo electrónico falso solicitando información confidencial.",
+            "fecha": "2023-05-16",
+            "hora": "10:00",
+            "detalles_adicionales": "Se sospecha que el ataque proviene de un servidor ubicado en otro país.",
+            "actores_delito": [
+                {
+                    "nombre": "Desconocido",
+                    "edad": null,
+                    "genero": "Desconocido",
+                    "descripcion": "El autor del fraude utilizó una identidad falsa en línea y ocultó su ubicación real.",
+                    "url_img": "Aqui va la ruta local o remota"
+                }
+            ]
+        },
+        {
+            "id": "000004",
+            "direccion": "Calle del Sol 789",
+            "coordenadas": {
+                "latitud": -8.111173950984267,
+                "longitud": -79.02822017669634
+            },
+            "tipo_delito": "Fraude cibernético",
+            "descripcion": "Se detectó un caso de fraude cibernético en la Calle del Sol 789. Una persona recibió un correo electrónico falso solicitando información confidencial.",
+            "fecha": "2023-05-16",
+            "hora": "10:00",
+            "detalles_adicionales": "Se sospecha que el ataque proviene de un servidor ubicado en otro país.",
+            "actores_delito": [
+                {
+                    "nombre": "Desconocido",
+                    "edad": null,
+                    "genero": "Desconocido",
+                    "descripcion": "El autor del fraude utilizó una identidad falsa en línea y ocultó su ubicación real.",
+                    "url_img": "Aqui va la ruta local o remota"
+                }
+            ]
+        },
+        {
+            "id": "000005",
+            "direccion": "Calle del Sol 789",
+            "coordenadas": {
+                "latitud": -8.11233950974100,
+                "longitud": -79.02822017669634
             },
             "tipo_delito": "Fraude cibernético",
             "descripcion": "Se detectó un caso de fraude cibernético en la Calle del Sol 789. Una persona recibió un correo electrónico falso solicitando información confidencial.",

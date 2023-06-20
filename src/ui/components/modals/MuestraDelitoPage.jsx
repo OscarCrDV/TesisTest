@@ -22,14 +22,14 @@ export function MuestraDelitoPage() {
     const arrayData = Object.entries(delitosResponse);
     const delito = buscarElementoPorId(id, arrayData[0][1]);
 
-    console.log(delito.efectivos_policiales);
-
     return (
         <>
-            <div className='container bg-light text-dark'>
+            <div className='container bg-light text-dark p-5' style={{borderRadius: "10px" }}>
                 <div className="row">
-                    <div style={{ marginTop: '8vh', marginBottom: '4vh' }} className="col-10 general">
-                        <h4 style={{ textAlign: "center", textDecoration: "underline" }} className='pt-5'>Actores Involucrados</h4>
+                    <div className="col-10 general">
+                        <div style={{ textAlign: "center",}} className="card-header bg-warning pt-3 pb-2 mt-3">
+                            <h4>Actores Involucrados</h4>
+                        </div>
                         <div className="imagenes col-12 p-4">
                             <div className="row">
                                 {Array.isArray(delito.actores_delito) && delito.actores_delito.map((delito, indice) => (
@@ -37,11 +37,13 @@ export function MuestraDelitoPage() {
                                 ))}
                             </div>
                         </div>
-                        <h4 style={{ textAlign: "center", textDecoration: "underline" }} className='p-2'>Información de la Ocurrencia</h4>
+                        <div style={{ textAlign: "center"}} className="card-header bg-warning pt-3 pb-2">
+                            <h4>Información de la Ocurrencia</h4>
+                        </div>
                         <div className="information col-12 p-4">
                             <div className="row">
                                 <div className="col-4">
-                                    <h5 className="card-title" style={{ color: '#333', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '10px', textDecoration: "underline" }}>Detalles del delito</h5>
+                                    <h5 className="card-title" style={{ color: '#333', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '10px', textDecoration: "underline", textAlign:"center"}}>Detalles del delito</h5>
                                     <b>-</b>
                                     <p className="card-text" style={{ marginBottom: '5px' }}><b>ID:</b> {delito.id}</p>
                                     <p className="card-text" style={{ marginBottom: '5px' }}><b>Dirección: </b>{delito.direccion}</p>
@@ -49,13 +51,13 @@ export function MuestraDelitoPage() {
                                     <p className="card-text" style={{ marginBottom: '10px' }}><b>Descripción General: </b>{delito.descripcion}</p>
                                 </div>
                                 <div className="col-4">
-                                    <h5 className="card-title" style={{ color: '#333', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '10px', textDecoration: "underline" }}>Actores del delito</h5>
+                                    <h5 className="card-title" style={{ color: '#333', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '10px', textDecoration: "underline", textAlign:"center" }}>Actores del delito</h5>
                                     {Array.isArray(delito.actores_delito) && delito.actores_delito.map((delito, indice) => (
                                         <ActoresDelitoInfo key={indice} actor={delito} />
                                     ))}
                                 </div>
                                 <div className="col-4">
-                                    <h5 className="card-title" style={{ color: '#333', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '10px', textDecoration: "underline" }}>Efectivos Policiales</h5>
+                                    <h5 className="card-title" style={{ color: '#333', fontSize: '1.2rem', fontWeight: 'bold', marginBottom: '10px', textDecoration: "underline", textAlign:"center" }}>Efectivos Policiales</h5>
 
                                     {Array.isArray(delito.efectivos_policiales) && delito.efectivos_policiales.map((efectivo, indice) => (
                                         <EfectivosPolicialesInfo key={indice} efectivo={efectivo} />
@@ -76,7 +78,7 @@ export function MuestraDelitoPage() {
                             </div>
                         </div> */}
                     </div>
-                    <div className="col-2" style={{ paddingTop: "9vh", paddingLeft: "50px" }}>
+                    <div className="col-2" style={{ paddingTop: "15px"}}>
                         <button type="button" className="btn btn-warning mb-4 mt-2" style={{ width: '200px', padding: "12px" }} ><a style={{ color: 'white', textDecoration: 'none' }} href="/mapa">Regresar <TfiMapAlt className='mx-2' /></a></button>
                         <button type="button" className="btn btn-secondary mb-4" style={{ width: '200px', padding: "12px" }} >Imprimir <AiFillPrinter /> </button>
 

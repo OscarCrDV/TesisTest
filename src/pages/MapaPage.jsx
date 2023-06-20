@@ -103,8 +103,6 @@ export const MapaPage = () => {
       SetIdSelectDelito(idMarker);
 
       updateCoordinates();
-
-      console.log(idMarker);
     }
 
 

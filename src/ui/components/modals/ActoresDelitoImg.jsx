@@ -16,7 +16,7 @@ export function ActoresDelitoImg({ urlImg, nombre }) {
                             padding: '10px',
                         }}
                     />
-                    <p style={{ textAlign: 'center' }}>{nombre}</p>
+                    <p style={{ textAlign: 'center', paddingTop:"7px"}}>{nombre}</p>
                 </div>
         </>
     )

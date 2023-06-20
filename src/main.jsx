@@ -5,6 +5,7 @@ import App from './App.jsx'
 import './index.css'
 import HeroesApp from './HeroesApp.jsx';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'animate.css';
 
 
 
